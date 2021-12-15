@@ -12,6 +12,7 @@ const Navbar = ({ totalItems }) => {
 
   return (
     <>
+      {/* AppBar is a component from material-ui - it's our fixed navbar */}
       <AppBar position="fixed" className={classes.appBar} color="inherit">
         <Toolbar>
           <Typography component={Link} to="/" varient="h6" className={classes.title} color="inherit">
@@ -19,6 +20,7 @@ const Navbar = ({ totalItems }) => {
             NL Pawn Shop
           </Typography>
           <div className={classes.grow} />
+          {/* if we are on the home route show the button, if not show nothing */}
           {location.pathname === "/" && (
             <div className={classes.button}>
               <IconButton component={Link} to="/cart" aria-label="Show cart items" color="inherit">

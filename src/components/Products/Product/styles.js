@@ -4,7 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles(() => ({
   root: {
-    maxWidth: "96%",
+    maxWidth: "96%", // max width of the product card - written in camelCase.
     maxHeight: "96%",
   },
   media: {

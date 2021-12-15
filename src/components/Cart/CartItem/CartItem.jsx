@@ -8,12 +8,15 @@ const CartItem = ({ item, onUpdateCartQty, onRemoveFromCart }) => {
 
   return (
     <Card>
+      {/* Had to change the image tags from media to image as commerce.js was updated. */}
       <CardMedia image={item.image.url} alt={item.name} className={classes.media} />
       <CardContent className={classes.cardContent}>
         <Typography variant="h4">{item.name}</Typography>
         <Typography variant="h5">{item.line_total.formatted_with_symbol}</Typography>
       </CardContent>
+      {/* all the actions of the card */}
       <CardActions className={classes.cardActions}>
+        {/* all the butotn on the card */}
         <div className={classes.buttons}>
           <Button type="button" size="small" onClick={() => onUpdateCartQty(item.id, item.quantity - 1)}>
             -

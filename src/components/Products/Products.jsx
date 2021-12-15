@@ -10,6 +10,9 @@ const Products = ({ products, onAddToCart }) => {
     <main className={classes.content}>
       <div className={classes.toolbar} />
       <Grid container justify="center" spacing="{4}">
+        {" "}
+        {/* Grid container - allow one to put their items in a grid */}
+        {/* allow one to put their items in a grid */}
         {products.map((product) => (
           <Grid item key={product.id} xs={12} sm={6} md={4} lg={3}>
             <Product product={product} onAddToCart={onAddToCart} />

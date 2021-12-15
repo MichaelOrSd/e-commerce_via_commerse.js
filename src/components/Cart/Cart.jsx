@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Typography, Button, Grid } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import useStyles from "./styles";
+import useStyles from "./styles"; // imports our styles from the styles.js file
 import CartItem from "./CartItem/CartItem";
 
 const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart }) => {
@@ -11,6 +11,8 @@ const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart
     <Typography variant="subtitle1">
       You have no items in your cart.
       <Link to="/" className={classes.link}>
+        {" "}
+        {/* Links the user back to the products page */}
         <> Start adding some</>
       </Link>
       !
@@ -26,7 +28,8 @@ const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart
           </Grid>
         ))}
       </Grid>
-      <div classesName={classes.cardDetails}>
+      {/* Subtotal, Price, and Buttons */}
+      <div className={classes.cardDetails}>
         <Typography variant="h4">Subtotal: {cart.subtotal.formatted_with_symbol}</Typography>
         <div>
           <Button className={classes.emptyButton} size="large" type="button" variant="contained" color="secondary" onClick={handleEmptyCart}>
@@ -40,6 +43,8 @@ const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart
     </>
   );
 
+  // if cart is empty, show empty cart message
+  // Any number, other than 0, is Truthy so - Not Flase = Ture
   if (!cart.line_items) return "Loading...";
 
   return (
